@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node loop.js"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security"
+  }
+}
