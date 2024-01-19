@@ -1,4 +1,4 @@
-module.export = [
+module.exports = [
   {
     id: "3",
     name: "Персей",
