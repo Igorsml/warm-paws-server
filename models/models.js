@@ -13,7 +13,7 @@ const Basket = sequelize.define("basket", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
-const Goods = sequelize.define("goods", {
+const Good = sequelize.define("goods", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   name: {
     type: DataTypes.STRING,
@@ -34,12 +34,12 @@ const GoodsInfo = sequelize.define("goodsInfo", {
 User.hasOne(Basket);
 Basket.belongsTo(User);
 
-Goods.hasMany(GoodsInfo);
-GoodsInfo.belongsTo(Goods);
+Good.hasOne(GoodsInfo);
+GoodsInfo.belongsTo(Good);
 
 module.exports = {
   User,
   Basket,
-  Goods,
+  Good,
   GoodsInfo,
 };
