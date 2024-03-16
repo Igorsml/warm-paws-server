@@ -9,7 +9,7 @@ const User = sequelize.define("user", {
 });
 
 // лакомства, мерч
-const Basket = sequelize.define("basket", {
+const Cart = sequelize.define("cart", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
@@ -31,15 +31,15 @@ const GoodsInfo = sequelize.define("goodsInfo", {
   description: { type: DataTypes.STRING, allowNull: false },
 });
 
-User.hasOne(Basket);
-Basket.belongsTo(User);
+User.hasOne(Cart);
+Cart.belongsTo(User);
 
 Good.hasOne(GoodsInfo);
 GoodsInfo.belongsTo(Good);
 
 module.exports = {
   User,
-  Basket,
+  Cart,
   Good,
   GoodsInfo,
 };
